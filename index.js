@@ -29,12 +29,9 @@ sql.connect(config, (err) => {
 });
 
 app.get('/', async (req, res) => {
-  try {
-    const result = await sql.query('SELECT TOP 20 * FROM  [SalesLT].[Customer]');
+
     res.send("hello");
-  } catch (err) {
-    res.status(500).send('Internal Server Error');
-  }
+
 });
 app.get('/api/top-rows', async (req, res) => {
     try {
